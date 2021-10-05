@@ -1,0 +1,22 @@
+class Solution{
+public:	
+	// Function to check if array has 2 elements
+	// whose sum is equal to the given value
+	bool hasArrayTwoCandidates(int a[], int n, int x) {
+	  sort(a,a+n);
+	  int s =0;
+	  int e= n-1;
+	  while(s<e){
+	      if(a[s]+a[e]==x){
+	          return true;
+	      }
+	      else if(a[s]+a[e]>x){
+	          e--;
+	      }
+	      else if (a[s]+a[e]<x){
+	          s++;
+	      }
+	  }
+	  return false;
+	}
+};
